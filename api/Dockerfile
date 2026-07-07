@@ -1,5 +1,6 @@
 # Stage 1: Dependencies
-FROM node:22-alpine AS deps
+FROM node:22-slim AS deps
+
 WORKDIR /app
 
 # Install pnpm

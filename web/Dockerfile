@@ -70,4 +70,5 @@ EXPOSE ${PORT}
 # HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
 #   CMD wget -q -O - http://localhost:${PORT}/api/health || exit 1
 
-CMD ["node", "server"] 
+# CMD ["node", "server"] 
+CMD ["sh", "-c", "echo CONTAINER_STARTING port=$PORT; node server.js; echo EXIT_CODE=$?"]

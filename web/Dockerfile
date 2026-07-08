@@ -65,10 +65,11 @@ USER nextjs
 # Expose the port the app will run on
 ENV PORT 3000
 EXPOSE ${PORT}
+ENV HOSTNAME "0.0.0.0"
+
 
 # Health check to verify app is running
 # HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
 #   CMD wget -q -O - http://localhost:${PORT}/api/health || exit 1
 
-# CMD ["node", "server"] 
-CMD ["sh", "-c", "echo CONTAINER_STARTING port=$PORT; node server.js; echo EXIT_CODE=$?"]
+CMD ["node", "server"] 
